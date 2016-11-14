@@ -1,10 +1,11 @@
 # ESP8266----web_Socket
 
 This code was developed for the ESP8266 dorkbotpdx class for November 13, 2016.
+https://dorkbotpdx.org/esp8266_2016
 
-We'll be programming the ESP8266 wifi chip. We used the NodeMCU.
+We'll be programming the ESP8266 wifi chip. We used the NodeMCU development board although most ESP8266 boards will work(not sparkfun.. see memory issues below).
 
-Your boards are pre-programmed as wifi hot spots. Try connecting to your board with your phone and trying these pages: http://192.168.4.1/index.html this controls the blue onboard LED
+The NodeMcu's for the class are pre-programmed as wifi hot spots. Try connecting to your board with your phone and trying these pages: http://192.168.4.1/index.html this controls the blue onboard LED
 
 Install Arduino 1.6.11 or 1.6.12 from here: https://www.arduino.cc/en/Main/OldSoftwareReleases#previous
 
