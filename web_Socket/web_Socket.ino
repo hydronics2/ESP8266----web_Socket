@@ -51,34 +51,23 @@ return;
 }
 else if (state == GET_SAMPLE__WAITING)
 {
+
 int ADCreading = analogRead(ANALOG_PIN);
-byte ledStatus = LOW;
 
-//Scale to voltage
-float voltage = ADCreading * 3.2;
-voltage = voltage/32.76;
-
-//Steinhart–Hart voltage to temp conversion
-//float Temp = log(((10240000/ADCreading) - 10000));
-//Temp = 1 / (0.001129148 + (0.000234125 + (0.0000000876741 * Temp * Temp ))* Temp );
-//float temperatureC = Temp - 273.15; // Convert Kelvin to Celsius
-//float temperatureF = (temperatureC * 9.0)/ 5.0 + 32.0; // Celsius to Fahrenheit - comment out this line if you need Celsius
-//float temperature = round(temperatureF*10)/10;
 
 //Remove the comment below to enable reading from the AD0 on your board
 //temp_int = (int) temperature; 
 
 //SIMULATION
 //Comment the line below to disable the simulation
-//temp_int = temp_int + 1;
 temp_int = random(0,100);
-Serial.println(voltage);
+Serial.println(temp_int);
 
-String temp_str = String(voltage);
+String temp_str = String(temp_int);
 webSocket.sendTXT(socketNumber, "wpMeter,Arduino," + temp_str + ",1");
 //Serial.println("Temp sent!! ");
 //Delay sending next sample so that the web server can respond
-delay(200);
+delay(100);
 //Remove the comment below to switch the off the continous sampling
 //state = SEQUENCE_IDLE;
 return;
